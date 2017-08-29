@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Narrow Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/docs/4.0/examples/narrow-jumbotron/narrow-jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+          
+          </ul>
+        </nav>
+        <h3 class="text-muted">Twitter chat</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1 class="display-3">Twitter chat</h1>
+        <p class="lead my-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p><a class="btn btn-lg btn-success" id="addBtn" href="#" role="button">Tester</a></p>
+      </div>
+
+      <div class="row marketing">
+
+
+<div id="tester" class="row" style="margin-top: 40px">
+        
+      </div>
+
+ 
+
+
+      </div>
+
+
+
+
+
+
+<div class="seccio">
+  <div class="container">
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+          <!-- Container for the demo -->
+          <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+              <p>Sign in with your Twitter account below.</p>
+              <!-- Button that handles sign-in/sign-out -->
+              <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in">Sign in with Twitter</button>
+              <!-- Container where we'll display the user details -->
+              <div class="quickstart-user-details-container">
+                Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+                <div>Firebase auth <code>currentUser</code> object value:</div>
+              <pre><code id="quickstart-account-details">null</code></pre>
+              <div>Twitter OAuth Token:</div>
+            <pre><code id="quickstart-oauthtoken">null</code></pre>
+            <div>Twitter OAuth Secret:</div>
+          <pre><code id="quickstart-oauthsecret">null</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+      <footer class="footer">
+        <p>&copy; Company 2017</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+
+
+
+<script>
+    $(document).ready(function() {
+
+
+
+    /**
+     * Function called when clicking the Login/Logout button.
+     */
+    // [START buttoncallback]
+    function toggleSignIn() {
+      if (!firebase.auth().currentUser) {
+        // [START createprovider]
+        var provider = new firebase.auth.TwitterAuthProvider();
+        // [END createprovider]
+        // [START signin]
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+          // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+          // You can use these server side with your app's credentials to access the Twitter API.
+          var token = result.credential.accessToken;
+          var secret = result.credential.secret;
+          // The signed-in user info.
+          var user = result.user;
+          // [START_EXCLUDE]
+          document.getElementById('quickstart-oauthtoken').textContent = token;
+          document.getElementById('quickstart-oauthsecret').textContent = secret;
+          // [END_EXCLUDE]
+        }).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+          // [START_EXCLUDE]
+          if (errorCode === 'auth/account-exists-with-different-credential') {
+            alert('You have already signed up with a different auth provider for that email.');
+            // If you are using multiple auth providers on your app you should handle linking
+            // the user's accounts here.
+          } else {
+            console.error(error);
+          }
+          // [END_EXCLUDE]
+        });
+        // [END signin]
+      } else {
+        // [START signout]
+        firebase.auth().signOut();
+        // [END signout]
+      }
+      // [START_EXCLUDE]
+      document.getElementById('quickstart-sign-in').disabled = true;
+      // [END_EXCLUDE]
+    }
+    // [END buttoncallback]
+    /**
+     * initApp handles setting up UI event listeners and registering Firebase auth listener:
+     *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
+     *    out, and that is where we update the UI.
+     */
+
+    function initApp() {
+      // Listening for auth state changes.
+      // [START authstatelistener]
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          var displayName = user.displayName;
+          var email = user.email;
+          var emailVerified = user.emailVerified;
+          var photoURL = user.photoURL;
+          var isAnonymous = user.isAnonymous;
+          var uid = user.uid;
+          var providerData = user.providerData;
+
+
+          console.log("VARIABLE DE dins: " + displayName);
+
+          // [START_EXCLUDE]
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+          // [END_EXCLUDE]
+        } else {
+          // User is signed out.
+          // [START_EXCLUDE]
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+          document.getElementById('quickstart-sign-in').textContent = 'Sign in with Twitter';
+          document.getElementById('quickstart-account-details').textContent = 'null';
+          document.getElementById('quickstart-oauthtoken').textContent = 'null';
+          document.getElementById('quickstart-oauthsecret').textContent = 'null';
+          // [END_EXCLUDE]
+        }
+        // [START_EXCLUDE]
+        document.getElementById('quickstart-sign-in').disabled = false;
+        // [END_EXCLUDE]
+      });
+      // [END authstatelistener]
+      document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+    }
+
+
+
+    window.onload = function() {
+      initApp();
+    };
+
+
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAOPPJklAZq-GqusQTxpRtt_1OWXlnU2P0",
+    authDomain: "tester-5ddd5.firebaseapp.com",
+    databaseURL: "https://tester-5ddd5.firebaseio.com",
+    projectId: "tester-5ddd5",
+    storageBucket: "tester-5ddd5.appspot.com",
+    messagingSenderId: "427318596299"
+  };
+  firebase.initializeApp(config);
+
+
+
+
+
+var database = firebase.database();
+
+var randomnumber = Math.floor((Math.random() * 10000) + 1);
+
+console.log(randomnumber);
+
+
+
+
+    $("#addBtn").on('click', function() {
+            var value = "Hei bainas";
+            if (value != null) {
+                writeUserData();
+            }
+        });
+
+
+        $("#addBtn2").on('click', function() {
+            var value = "Hei bainas";
+            if (value != null) {
+                deleteUserData();
+            }
+        });
+
+
+
+
+// firebase.auth().onAuthStateChanged(function(user) {
+// var displayName = user.displayName;
+// console.log("Nom del mandingo: " +   displayName);
+// });
+
+
+function writeUserData() {
+
+var currentdate = new Date();
+var datetime = currentdate.getDate() + ""
++ (currentdate.getMonth()+1)  + ""
++ currentdate.getFullYear() + ""
++ currentdate.getHours() + ""
++ currentdate.getMinutes() + ""
++ currentdate.getSeconds() + ""
++ currentdate.getMilliseconds();
+
+
+firebase.auth().onAuthStateChanged(function(user) {
+  var displayName = user.displayName;
+
+firebase.database().ref('randoms/' + datetime).set({
+usernamekey: "value",  displayName,
+email: randomnumber + "email",
+});
+});
+
+}
+
+
+var playersRef = firebase.database().ref("randoms");
+
+playersRef.on("child_added", function(data, prevChildKey) {
+var newPlayer = data.val();
+console.log("email: " + newPlayer.email);
+console.log("username: " + newPlayer.username);
+$( "#tester" ).append( "<div class='col-md-2'><div class='well' style='font-size:10px'>" + prevChildKey + "</div></div>" );
+});
+
+
+
+
+
+
+
+    });
+    </script>
+
+
+
+
+
+  </body>
+</html>
