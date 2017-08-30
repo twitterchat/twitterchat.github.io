@@ -46,12 +46,23 @@ Mapes
 <li id="menu-item-295" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-293 current_page_item menu-item-295 active"><a title="Firebase" href="http://95.85.51.187/municipis/firebase/">Firebase</a></li>
 </ul></div>			</div>
 		</nav>
-	</header><div class="cap" style="background: url('') #f9f9f9 center center; background-size: cover">
+	</header>
+	
+<div class="cap" style="background: url('') #f9f9f9 center center; background-size: cover">
 	<div class="container">
 		<h1 class="text-center">
-		Firebase		</h1>
+		Firebase
+
+		</h1>
+
+<div class="text-center">	
+          <button disabled class="btn btn-lg btn-info" id="quickstart-sign-in"><i class="fa fa-twitter"></i> Fes login</button>
+</div>
+
+
 	</div>
 </div>
+
 
 
 
@@ -60,15 +71,48 @@ Mapes
 <div class="seccio">
 	<div class="container">
 		
-		<div class="text-center">
-			<button class="btn btn-call" id="addBtn">Afegir</button>
 
-			<div id="tester" class="row" style="margin-top: 40px">
+
+
+
+
+<div class="row">
+	
+<div class="col-md-7">
+	
+<div id="tester" class="row">
 				
 			</div>
 
 
-		</div>
+</div>
+
+
+<div class="col-md-5">
+<div id="missatgers">
+	
+
+
+
+
+	<textarea name="" id="textome" cols="30" rows="5" style="width: 100%" placeholder="Escriu aquí el teu missatge"></textarea><br>
+
+
+			<button class="btn btn-call btn-block" id="addBtn">Afegeix missatge</button>
+
+</div>
+</div>
+
+
+</div>
+
+
+
+
+
+			
+
+
 		
 	</div>
 </div>
@@ -77,7 +121,7 @@ Mapes
 
 
 
-<div class="seccio">
+<div class="seccio" style="display: none" >
 	<div class="container">
 
 
@@ -94,8 +138,7 @@ Mapes
         <div class="mdl-card__supporting-text mdl-color-text--grey-600">
           <p>Sign in with your Twitter account below.</p>
 
-          <!-- Button that handles sign-in/sign-out -->
-          <button disabled class="btn btn-info" id="quickstart-sign-in">Sign in with Twitter</button>
+     
 
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
@@ -156,13 +199,44 @@ Mapes
       </div>
     </div>
   </div>
-</div>
+</div>	
+	
+	
+	
+	
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js?ver=4.7.2'></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
 
 <script>
     $(document).ready(function() {
+
+
+
+
+
+function ObjectLength_Modern( object ) {
+    return Object.keys(object).length;
+}
+
+function ObjectLength_Legacy( object ) {
+    var length = 0;
+    for( var key in object ) {
+        if( object.hasOwnProperty(key) ) {
+            ++length;
+        }
+    }
+    return length;
+}
+
+var ObjectLength =
+    Object.keys ? ObjectLength_Modern : ObjectLength_Legacy;
+
+
+
+
+
+/** LOGIN **/
 
 
 
@@ -237,21 +311,25 @@ Mapes
           var providerData = user.providerData;
 
 
-          console.log("VARIABLE DE dins: " + displayName);
-
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          document.getElementById('quickstart-sign-in').textContent = 'Tanca la sessió';
           document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+          document.getElementById('missatgers').style.display = "block";
+
+
           // [END_EXCLUDE]
         } else {
           // User is signed out.
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign in with Twitter';
+          document.getElementById('quickstart-sign-in').textContent = 'Fes login';
           document.getElementById('quickstart-account-details').textContent = 'null';
           document.getElementById('quickstart-oauthtoken').textContent = 'null';
           document.getElementById('quickstart-oauthsecret').textContent = 'null';
+                    document.getElementById('missatgers').style.display = "none";
+
+
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE]
@@ -267,6 +345,11 @@ Mapes
     window.onload = function() {
       initApp();
     };
+
+
+
+
+/** CONFIG **/
 
 
 
@@ -289,6 +372,8 @@ var database = firebase.database();
 
 var randomnumber = Math.floor((Math.random() * 10000) + 1);
 
+
+
 console.log(randomnumber);
 
 
@@ -299,15 +384,13 @@ console.log(randomnumber);
             if (value != null) {
                 writeUserData();
             }
+
+
+
+
         });
 
 
-        $("#addBtn2").on('click', function() {
-            var value = "Hei bainas";
-            if (value != null) {
-                deleteUserData();
-            }
-        });
 
 
 
@@ -319,6 +402,9 @@ console.log(randomnumber);
 
 
 function writeUserData() {
+
+var textome = $('#textome').val();
+$('#textome').val('');
 
 var currentdate = new Date();
 var datetime = currentdate.getDate() + ""
@@ -332,32 +418,51 @@ var datetime = currentdate.getDate() + ""
 
 firebase.auth().onAuthStateChanged(function(user) {
 	var displayName = user.displayName;
+	var photoURL = user.photoURL;
 
 firebase.database().ref('randoms/' + datetime).set({
-usernamekey: "value",  displayName,
+username:  displayName,
 email: randomnumber + "email",
+contenido: textome,
+avatar:photoURL,
 });
 });
 
 }
 
 
+
+
 var playersRef = firebase.database().ref("randoms");
 
 playersRef.on("child_added", function(data, prevChildKey) {
 var newPlayer = data.val();
-console.log("email: " + newPlayer.email);
+console.log("contenido: " + newPlayer.contenido);
 console.log("username: " + newPlayer.username);
-$( "#tester" ).append( "<div class='col-md-2'><div class='well' style='font-size:10px'>" + prevChildKey + "</div></div>" );
+
+
+$( "<div class='col-md-12'><div class='panel panel-default text-left'><div class='panel-body'><div class='row'><div class='col-md-2'>" +"<img class='avatar' src=	'" + newPlayer.avatar + "'></div><div class='col-md-10'><h3>"+ newPlayer.username 	+"</h3><p>"	+ newPlayer.contenido 	+ "</p></div></div></div></div>" ).prependTo( "#tester" ).hide().slideDown('fast');
 });
 
 
+var starCountRef = firebase.database().ref('randoms');
+starCountRef.on('value', function(snapshot) {
+  var gumersindo = snapshot.val();
+console.log( Object.keys(gumersindo).length );
+});
 
 
+$('#textome').keydown(function (e) {
 
+  if (e.ctrlKey && e.keyCode == 13) {
+    // Ctrl-Enter pressed
+$( "#addBtn" ).trigger( "click" );
+  }
+});
 
 
     });
     </script>
+
   </body>
 </html>
