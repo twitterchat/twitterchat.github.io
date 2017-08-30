@@ -1,461 +1,309 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Test</title>
-	<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test</title>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" media="all" href="style.css" />
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300,100,500' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet">
+  <meta name='robots' content='noindex,follow' /> </head>
 
-
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" media="all" href="style.css" />
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300,100,500' rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet">
-
-
-	<meta name='robots' content='noindex,follow' />
-
-</head>
 <body itemscope itemtype="http://schema.org/WebSite" class="page-template page-template-tester page-template-tester-php page page-id-293">
-	<header class="navbar navbar-default navbar-static-top" id="top" role="banner">
-		<nav role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					</button>
-					<div class="brand">
-						<a href="/">TWITTER CHAT</a>
-					</div>
-				</div>
-				<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul id="menu-top" class="nav nav-pills menutop"><li id="menu-item-91" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-91"><a title="Portada" href="/">Portada</a></li>
-
-</ul></div>			</div>
-		</nav>
-	</header>
-	
-<div class="cap" style="background: url('') #f9f9f9 center center; background-size: cover">
-	<div class="container">
-		<h1 class="text-center">
+  <header class="navbar navbar-default navbar-static-top" id="top" role="banner">
+    <nav role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <div class="brand"> <a href="/">TWITTER CHAT</a> </div>
+        </div>
+        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+          <ul id="menu-top" class="nav nav-pills menutop">
+            <li id="menu-item-91" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-91"><a title="Portada" href="/">Portada</a> </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="cap" style="background: url('') #f9f9f9 center center; background-size: cover">
+    <div class="container">
+      <h1 class="text-center">
 		Firebase
 
 		</h1>
-
-<div class="text-center">	
-          <button disabled class="btn btn-lg btn-info" id="quickstart-sign-in"><i class="fa fa-twitter"></i> Fes login</button>
-</div>
-
-
-	</div>
-</div>
-
-
-
-
-
-
-<div class="seccio">
-	<div class="container">
-		
-
-
-
-
-
-<div class="row">
-	
-<div class="col-md-7">
-	
-<div id="tester" class="row">
-				
-			</div>
-
-
-</div>
-
-
-<div class="col-md-5">
-<div id="missatgers">
-	
-
-
-
-
-	<textarea name="" id="textome" cols="30" rows="5" style="width: 100%" placeholder="Escriu aquí el teu missatge"></textarea><br>
-
-
-			<button class="btn btn-call btn-block" id="addBtn">Afegeix missatge</button>
-
-</div>
-</div>
-
-
-</div>
-
-
-
-
-
-			
-
-
-		
-	</div>
-</div>
-
-
-
-
-
-<div class="seccio" style="display: none" >
-	<div class="container">
-
-
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
-
-
-
-  <main class="mdl-layout__content mdl-color--grey-100">
-    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
-
-      <!-- Container for the demo -->
-      <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-
-        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-          <p>Sign in with your Twitter account below.</p>
-
-     
-
-          <!-- Container where we'll display the user details -->
-          <div class="quickstart-user-details-container">
-            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-            <div>Firebase auth <code>currentUser</code> object value:</div>
-            <pre><code id="quickstart-account-details">null</code></pre>
-            <div>Twitter OAuth Token:</div>
-            <pre><code id="quickstart-oauthtoken">null</code></pre>
-            <div>Twitter OAuth Secret:</div>
-            <pre><code id="quickstart-oauthsecret">null</code></pre>
+      <div class="text-center">
+        <button disabled class="btn btn-lg btn-info" id="quickstart-sign-in"><i class="fa fa-twitter"></i> Fes login</button>
+      </div>
+    </div>
+  </div>
+  <div class="seccio">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <div id="tester" class="row"> </div>
+        </div>
+        <div class="col-md-5">
+          <div id="missatgers">
+            <textarea name="" id="textome" cols="30" rows="5" style="width: 100%" placeholder="Escriu aquí el teu missatge"></textarea>
+            <br>
+            <button class="btn btn-call btn-block" id="addBtn">Afegeix missatge</button>
           </div>
         </div>
       </div>
     </div>
-  </main>
-</div>
-
-
-
-
-
-
-		
-	</div>
-</div>
-
-
-
-
-
-
-
-
-<div class="footer">
-  <div class="container">
-    <div class="row">
-
-<div class="col-md-3 ">
   </div>
-<div class="col-md-3 ">
-  </div>
-<div class="col-md-3 ">
-  </div>
-<div class="col-md-3 ">
-  </div>
-
-
-
-
-    </div>
-  </div>
-</div>
-<div class="subfooter">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-sm-6">
-        <p>&copy; Mapes 2017</p>
+  <div class="seccio" style="display: none">
+    <div class="container">
+      <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <main class="mdl-layout__content mdl-color--grey-100">
+          <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+            <!-- Container for the demo -->
+            <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                <p>Sign in with your Twitter account below.</p>
+                <!-- Container where we'll display the user details -->
+                <div class="quickstart-user-details-container"> Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+                  <div>Firebase auth <code>currentUser</code> object value:</div> <pre><code id="quickstart-account-details">null</code></pre>
+                  <div>Twitter OAuth Token:</div> <pre><code id="quickstart-oauthtoken">null</code></pre>
+                  <div>Twitter OAuth Secret:</div> <pre><code id="quickstart-oauthsecret">null</code></pre> </div>
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   </div>
-</div>	
-	
-	
-	
-	
-<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js?ver=4.7.2'></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-
-<script>
-    $(document).ready(function() {
-
-
-
-
-
-function ObjectLength_Modern( object ) {
-    return Object.keys(object).length;
-}
-
-function ObjectLength_Legacy( object ) {
-    var length = 0;
-    for( var key in object ) {
-        if( object.hasOwnProperty(key) ) {
-            ++length;
+  <div class="subfooter">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6">
+          <p>Twitter chat</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js?ver=4.7.2'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script>
+    $(document)
+      .ready(function() {
+        function ObjectLength_Modern(object) {
+          return Object.keys(object)
+            .length;
         }
-    }
-    return length;
-}
 
-var ObjectLength =
-    Object.keys ? ObjectLength_Modern : ObjectLength_Legacy;
-
-
-
-
-
-/** LOGIN **/
-
-
-
-    /**
-     * Function called when clicking the Login/Logout button.
-     */
-    // [START buttoncallback]
-    function toggleSignIn() {
-      if (!firebase.auth().currentUser) {
-        // [START createprovider]
-        var provider = new firebase.auth.TwitterAuthProvider();
-        // [END createprovider]
-        // [START signin]
-        firebase.auth().signInWithPopup(provider).then(function(result) {
-          // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
-          // You can use these server side with your app's credentials to access the Twitter API.
-          var token = result.credential.accessToken;
-          var secret = result.credential.secret;
-          // The signed-in user info.
-          var user = result.user;
-          // [START_EXCLUDE]
-          document.getElementById('quickstart-oauthtoken').textContent = token;
-          document.getElementById('quickstart-oauthsecret').textContent = secret;
-          // [END_EXCLUDE]
-        }).catch(function(error) {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          // The email of the user's account used.
-          var email = error.email;
-          // The firebase.auth.AuthCredential type that was used.
-          var credential = error.credential;
-          // [START_EXCLUDE]
-          if (errorCode === 'auth/account-exists-with-different-credential') {
-            alert('You have already signed up with a different auth provider for that email.');
-            // If you are using multiple auth providers on your app you should handle linking
-            // the user's accounts here.
-          } else {
-            console.error(error);
+        function ObjectLength_Legacy(object) {
+          var length = 0;
+          for (var key in object) {
+            if (object.hasOwnProperty(key)) {
+              ++length;
+            }
           }
-          // [END_EXCLUDE]
-        });
-        // [END signin]
-      } else {
-        // [START signout]
-        firebase.auth().signOut();
-        // [END signout]
-      }
-      // [START_EXCLUDE]
-      document.getElementById('quickstart-sign-in').disabled = true;
-      // [END_EXCLUDE]
-    }
-    // [END buttoncallback]
-    /**
-     * initApp handles setting up UI event listeners and registering Firebase auth listener:
-     *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
-     *    out, and that is where we update the UI.
-     */
-
-    function initApp() {
-      // Listening for auth state changes.
-      // [START authstatelistener]
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          var displayName = user.displayName;
-          var email = user.email;
-          var emailVerified = user.emailVerified;
-          var photoURL = user.photoURL;
-          var isAnonymous = user.isAnonymous;
-          var uid = user.uid;
-          var providerData = user.providerData;
-
-
-          // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-          document.getElementById('quickstart-sign-in').textContent = 'Tanca la sessió';
-          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-          document.getElementById('missatgers').style.display = "block";
-
-
-          // [END_EXCLUDE]
-        } else {
-          // User is signed out.
-          // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-          document.getElementById('quickstart-sign-in').textContent = 'Fes login';
-          document.getElementById('quickstart-account-details').textContent = 'null';
-          document.getElementById('quickstart-oauthtoken').textContent = 'null';
-          document.getElementById('quickstart-oauthsecret').textContent = 'null';
-                    document.getElementById('missatgers').style.display = "none";
-
-
-          // [END_EXCLUDE]
+          return length;
         }
-        // [START_EXCLUDE]
-        document.getElementById('quickstart-sign-in').disabled = false;
-        // [END_EXCLUDE]
-      });
-      // [END authstatelistener]
-      document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-    }
-
-
-
-    window.onload = function() {
-      initApp();
-    };
-
-
-
-
-/** CONFIG **/
-
-
-
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAOPPJklAZq-GqusQTxpRtt_1OWXlnU2P0",
-    authDomain: "tester-5ddd5.firebaseapp.com",
-    databaseURL: "https://tester-5ddd5.firebaseio.com",
-    projectId: "tester-5ddd5",
-    storageBucket: "tester-5ddd5.appspot.com",
-    messagingSenderId: "427318596299"
-  };
-  firebase.initializeApp(config);
-
-
-
-
-
-var database = firebase.database();
-
-var randomnumber = Math.floor((Math.random() * 10000) + 1);
-
-
-
-console.log(randomnumber);
-
-
-
-
-    $("#addBtn").on('click', function() {
+        var ObjectLength = Object.keys ? ObjectLength_Modern : ObjectLength_Legacy;
+        /** LOGIN **/
+        /**
+         * Function called when clicking the Login/Logout button.
+         */
+        // [START buttoncallback]
+        function toggleSignIn() {
+            if (!firebase.auth()
+              .currentUser) {
+              // [START createprovider]
+              var provider = new firebase.auth.TwitterAuthProvider();
+              // [END createprovider]
+              // [START signin]
+              firebase.auth()
+                .signInWithPopup(provider)
+                .then(function(result) {
+                  // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+                  // You can use these server side with your app's credentials to access the Twitter API.
+                  var token = result.credential.accessToken;
+                  var secret = result.credential.secret;
+                  // The signed-in user info.
+                  var user = result.user;
+                  // [START_EXCLUDE]
+                  document.getElementById('quickstart-oauthtoken')
+                    .textContent = token;
+                  document.getElementById('quickstart-oauthsecret')
+                    .textContent = secret;
+                  // [END_EXCLUDE]
+                })
+                .catch(function(error) {
+                  // Handle Errors here.
+                  var errorCode = error.code;
+                  var errorMessage = error.message;
+                  // The email of the user's account used.
+                  var email = error.email;
+                  // The firebase.auth.AuthCredential type that was used.
+                  var credential = error.credential;
+                  // [START_EXCLUDE]
+                  if (errorCode === 'auth/account-exists-with-different-credential') {
+                    alert('You have already signed up with a different auth provider for that email.');
+                    // If you are using multiple auth providers on your app you should handle linking
+                    // the user's accounts here.
+                  }
+                  else {
+                    console.error(error);
+                  }
+                  // [END_EXCLUDE]
+                });
+              // [END signin]
+            }
+            else {
+              // [START signout]
+              firebase.auth()
+                .signOut();
+              // [END signout]
+            }
+            // [START_EXCLUDE]
+            document.getElementById('quickstart-sign-in')
+              .disabled = true;
+            // [END_EXCLUDE]
+          }
+          // [END buttoncallback]
+          /**
+           * initApp handles setting up UI event listeners and registering Firebase auth listener:
+           *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
+           *    out, and that is where we update the UI.
+           */
+        function initApp() {
+          // Listening for auth state changes.
+          // [START authstatelistener]
+          firebase.auth()
+            .onAuthStateChanged(function(user) {
+              if (user) {
+                // User is signed in.
+                var displayName = user.displayName;
+                var email = user.email;
+                var emailVerified = user.emailVerified;
+                var photoURL = user.photoURL;
+                var isAnonymous = user.isAnonymous;
+                var uid = user.uid;
+                var providerData = user.providerData;
+                // [START_EXCLUDE]
+                document.getElementById('quickstart-sign-in-status')
+                  .textContent = 'Signed in';
+                document.getElementById('quickstart-sign-in')
+                  .textContent = 'Tanca la sessió';
+                document.getElementById('quickstart-account-details')
+                  .textContent = JSON.stringify(user, null, '  ');
+                document.getElementById('missatgers')
+                  .style.display = "block";
+                // [END_EXCLUDE]
+              }
+              else {
+                // User is signed out.
+                // [START_EXCLUDE]
+                document.getElementById('quickstart-sign-in-status')
+                  .textContent = 'Signed out';
+                document.getElementById('quickstart-sign-in')
+                  .textContent = 'Fes login';
+                document.getElementById('quickstart-account-details')
+                  .textContent = 'null';
+                document.getElementById('quickstart-oauthtoken')
+                  .textContent = 'null';
+                document.getElementById('quickstart-oauthsecret')
+                  .textContent = 'null';
+                document.getElementById('missatgers')
+                  .style.display = "none";
+                // [END_EXCLUDE]
+              }
+              // [START_EXCLUDE]
+              document.getElementById('quickstart-sign-in')
+                .disabled = false;
+              // [END_EXCLUDE]
+            });
+          // [END authstatelistener]
+          document.getElementById('quickstart-sign-in')
+            .addEventListener('click', toggleSignIn, false);
+        }
+        window.onload = function() {
+          initApp();
+        };
+        /** CONFIG **/
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyAOPPJklAZq-GqusQTxpRtt_1OWXlnU2P0",
+          authDomain: "tester-5ddd5.firebaseapp.com",
+          databaseURL: "https://tester-5ddd5.firebaseio.com",
+          projectId: "tester-5ddd5",
+          storageBucket: "tester-5ddd5.appspot.com",
+          messagingSenderId: "427318596299"
+        };
+        firebase.initializeApp(config);
+        var database = firebase.database();
+        var randomnumber = Math.floor((Math.random() * 10000) + 1);
+        console.log(randomnumber);
+        $("#addBtn")
+          .on('click', function() {
             var value = "Hei bainas";
             if (value != null) {
-                writeUserData();
+              writeUserData();
             }
-
-
-
-
+          });
+        // firebase.auth().onAuthStateChanged(function(user) {
+        // var displayName = user.displayName;
+        // console.log("Nom del mandingo: " + 	displayName);
+        // });
+        function writeUserData() {
+          var textome = $('#textome')
+            .val();
+          $('#textome')
+            .val('');
+          var currentdate = new Date();
+          var datetime = currentdate.getDate() + "" + (currentdate.getMonth() + 1) + "" + currentdate.getFullYear() + "" + currentdate.getHours() + "" + currentdate.getMinutes() + "" + currentdate.getSeconds() + "" + currentdate.getMilliseconds();
+          firebase.auth()
+            .onAuthStateChanged(function(user) {
+              var displayName = user.displayName;
+              var photoURL = user.photoURL;
+              firebase.database()
+                .ref('randoms/' + datetime)
+                .set({
+                  username: displayName,
+                  email: randomnumber + "email",
+                  contenido: textome,
+                  avatar: photoURL,
+                });
+            });
+        }
+        var playersRef = firebase.database()
+          .ref("randoms");
+        playersRef.on("child_added", function(data, prevChildKey) {
+          var newPlayer = data.val();
+          console.log("contenido: " + newPlayer.contenido);
+          console.log("username: " + newPlayer.username);
+          $("<div class='col-md-12'><div class='panel panel-default text-left'><div class='panel-body'><div class='row'><div class='col-md-2'>" + "<img class='avatar' src=	'" + newPlayer.avatar + "'></div><div class='col-md-10'><h3>" + newPlayer.username + "</h3><p>" + newPlayer.contenido + "</p></div></div></div></div>")
+            .prependTo("#tester")
+            .hide()
+            .slideDown('fast');
         });
+        var starCountRef = firebase.database()
+          .ref('randoms');
+        starCountRef.on('value', function(snapshot) {
+          var gumersindo = snapshot.val();
+          console.log(Object.keys(gumersindo)
+            .length);
+        });
+        $('#textome')
+          .keydown(function(e) {
+            if (e.ctrlKey && e.keyCode == 13) {
+              // Ctrl-Enter pressed
+              $("#addBtn")
+                .trigger("click");
+            }
+          });
+      });
+  </script>
+</body>
 
-
-
-
-
-
-// firebase.auth().onAuthStateChanged(function(user) {
-// var displayName = user.displayName;
-// console.log("Nom del mandingo: " + 	displayName);
-// });
-
-
-function writeUserData() {
-
-var textome = $('#textome').val();
-$('#textome').val('');
-
-var currentdate = new Date();
-var datetime = currentdate.getDate() + ""
-+ (currentdate.getMonth()+1)  + ""
-+ currentdate.getFullYear() + ""
-+ currentdate.getHours() + ""
-+ currentdate.getMinutes() + ""
-+ currentdate.getSeconds() + ""
-+ currentdate.getMilliseconds();
-
-
-firebase.auth().onAuthStateChanged(function(user) {
-	var displayName = user.displayName;
-	var photoURL = user.photoURL;
-
-firebase.database().ref('randoms/' + datetime).set({
-username:  displayName,
-email: randomnumber + "email",
-contenido: textome,
-avatar:photoURL,
-});
-});
-
-}
-
-
-
-
-var playersRef = firebase.database().ref("randoms");
-
-playersRef.on("child_added", function(data, prevChildKey) {
-var newPlayer = data.val();
-console.log("contenido: " + newPlayer.contenido);
-console.log("username: " + newPlayer.username);
-
-
-$( "<div class='col-md-12'><div class='panel panel-default text-left'><div class='panel-body'><div class='row'><div class='col-md-2'>" +"<img class='avatar' src=	'" + newPlayer.avatar + "'></div><div class='col-md-10'><h3>"+ newPlayer.username 	+"</h3><p>"	+ newPlayer.contenido 	+ "</p></div></div></div></div>" ).prependTo( "#tester" ).hide().slideDown('fast');
-});
-
-
-var starCountRef = firebase.database().ref('randoms');
-starCountRef.on('value', function(snapshot) {
-  var gumersindo = snapshot.val();
-console.log( Object.keys(gumersindo).length );
-});
-
-
-$('#textome').keydown(function (e) {
-
-  if (e.ctrlKey && e.keyCode == 13) {
-    // Ctrl-Enter pressed
-$( "#addBtn" ).trigger( "click" );
-  }
-});
-
-
-    });
-    </script>
-
-  </body>
 </html>
